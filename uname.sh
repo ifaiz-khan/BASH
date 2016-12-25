@@ -8,3 +8,4 @@ uname -o
 echo "displaying the process:"
 uname -p
 
+
