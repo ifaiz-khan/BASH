@@ -6,16 +6,16 @@
 
 if [ ! -z "$1" ] 
 then
-	echo "the group name entered as $1"
-	cat /etc/gshadow  | grep "^$1"
+	echo "The group name entered is $1"
+	cat /etc/gshadow  | grep "^${1}:" > /dev/null
 	if [ $? -eq 0 ]
 	then
-		echo " group nmae is already exist"
+		echo "Group $1 already exists"
 		exit
 	else 
-		echo " group is created"
+		echo "Creating the group $1"
 		groupadd $1
 	fi	
 else
-	echo "does not entered the group name"
+	echo "Group name is not provided"
 fi	
