@@ -26,12 +26,11 @@ then
 
 	echo "Both given inputs are exist. so adding user $2 to group $1"
 	usermod -G $1 $2
-	echo "abc"
 	if [ $? -eq 0 ]
 	then
-	echo $?
+		echo "Group $1 is added to the user $2"
 	else
-		echo $?
+		echo "Group $1 is not added to the user $2"
 	fi
 else
 	echo " does not entered the inputs"  
